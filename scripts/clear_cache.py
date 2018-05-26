@@ -210,7 +210,7 @@ def create_image_lists(image_dir, testing_percentage, validation_percentage):
 
 
 # savio, FLAGS.image_dir_test
-def create_image_lists_test(image_dir_test):
+def create_image_lists_test(image_dir):
   """Builds a list of training images from the file system.
 
   Analyzes the sub folders in the image directory, splits them into stable
