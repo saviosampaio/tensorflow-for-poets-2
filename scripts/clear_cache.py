@@ -214,9 +214,9 @@ def create_image_lists(image_dir, testing_percentage, validation_percentage):
             #tf.logging.info("SORTEIO TRAIN '" + file_name + "'")
             training_images.append(base_name)
 
-    print "ITENS IN TRAINING: " + len(training_images)
-    print "ITENS IN VALIDATION: " + len(validation_images)
-    print "ITENS IN TESTING: " + len(testing_images)
+    tf.logging.info("ITENS IN TRAINING: " + len(training_images))
+    tf.logging.info("ITENS IN VALIDATION: " + len(validation_images))
+    tf.logging.info("ITENS IN TESTING: " + len(testing_images))
             
     result[label_name] = {
         'dir': dir_name,
