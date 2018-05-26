@@ -281,7 +281,7 @@ def create_image_lists_test(image_dir_test):
       #if percentage_hash < validation_percentage:
       #  validation_images.append(base_name)
       #elif percentage_hash < (testing_percentage + validation_percentage):
-        testing_images.append(base_name)
+      testing_images.append(base_name)
       #else:
       #  training_images.append(base_name)
 
