@@ -194,17 +194,24 @@ def create_image_lists(image_dir, testing_percentage, validation_percentage):
       # primeiro criterio de divisao sera o nome do arquivo, se contem train_ val_ test_ na frente
       # segundo criterio sera randomico com base no percentual
       if file_name.index("_train_") != -1:
+          tf.logging.info("_TRAIN_ ENCONTRADO '" + file_name + "'")
           training_images.append(base_name)
       elif file_name.index("_val_") != -1:
+          tf.logging.info("_VAL_ ENCONTRADO '" + file_name + "'")
           validadion_images.append(base_name)
       elif file_name.index("_test_") != -1:
+          tf.logging.info("_TEST_ ENCONTRADO '" + file_name + "'")
           testing_images.append(base_name)
       else:
+          tf.logging.info("SORTEIO '" + file_name + "'")
           if percentage_hash < validation_percentage:
+            tf.logging.info("SORTEIO VAL '" + file_name + "'")
             validation_images.append(base_name)
           elif percentage_hash < (testing_percentage + validation_percentage):
+            tf.logging.info("SORTEIO TEST '" + file_name + "'")
             testing_images.append(base_name)
           else:
+            tf.logging.info("SORTEIO TRAIN '" + file_name + "'")
             training_images.append(base_name)
 
     result[label_name] = {
