@@ -893,6 +893,21 @@ def create_model_info(architecture):
     model_file_name = 'classify_image_graph_def.pb'
     input_mean = 128
     input_std = 128
+  elif architecture == 'inception_v4':
+    # pylint: disable=line-too-long
+    #data_url = 'http://download.tensorflow.org/models/image/imagenet/inception-2015-12-05.tgz'
+    #data_url = 'http://download.tensorflow.org/models/image/imagenet/inception-v3-2016-03-01.tar.gz'
+    data_url = 'http://download.tensorflow.org/models/inception_v4_2016_09_09.tar.gz'
+    # pylint: enable=line-too-long
+    bottleneck_tensor_name = 'pool_3/_reshape:0'
+    bottleneck_tensor_size = 2048
+    input_width = 299
+    input_height = 299
+    input_depth = 1
+    resized_input_tensor_name = 'Mul:0'
+    model_file_name = 'classify_image_graph_def.pb'
+    input_mean = 128
+    input_std = 128
   elif architecture == 'inception_v3b':
     # pylint: disable=line-too-long
     #data_url = 'http://download.tensorflow.org/models/image/imagenet/inception-2015-12-05.tgz'
@@ -903,20 +918,6 @@ def create_model_info(architecture):
     input_width = 299
     input_height = 299
     input_depth = 3
-    resized_input_tensor_name = 'Mul:0'
-    model_file_name = 'classify_image_graph_def.pb'
-    input_mean = 128
-    input_std = 128
-  elif architecture == 'inception_v3b2':
-    # pylint: disable=line-too-long
-    #data_url = 'http://download.tensorflow.org/models/image/imagenet/inception-2015-12-05.tgz'
-    data_url = 'http://download.tensorflow.org/models/image/imagenet/inception-v3-2016-03-01.tar.gz'
-    # pylint: enable=line-too-long
-    bottleneck_tensor_name = 'pool_3/_reshape:0'
-    bottleneck_tensor_size = 2048
-    input_width = 299
-    input_height = 299
-    input_depth = 1
     resized_input_tensor_name = 'Mul:0'
     model_file_name = 'classify_image_graph_def.pb'
     input_mean = 128
