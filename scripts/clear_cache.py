@@ -903,7 +903,7 @@ def create_model_info(architecture):
     bottleneck_tensor_size = 2048
     input_width = 299
     input_height = 299
-    input_depth = 1
+    input_depth = 3
     resized_input_tensor_name = 'Mul:0'
     model_file_name = 'classify_image_graph_def.pb'
     input_mean = 128
@@ -931,7 +931,7 @@ def create_model_info(architecture):
     bottleneck_tensor_size = 2048
     input_width = 512
     input_height = 512
-    input_depth = 1
+    input_depth = 3
     resized_input_tensor_name = 'Mul:0'
     model_file_name = 'classify_image_graph_def.pb'
     input_mean = 128
